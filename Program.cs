@@ -42,6 +42,125 @@ namespace CsharpTraining
             Console.WriteLine("0) Setup complete — launch Main Menu");
 
 
+            bool ii = true;
+            while (ii)
+            {
+                Console.Write("  Select option: ");
+
+
+
+                string choice = Console.ReadLine();
+
+                switch (choice)
+                {
+                    case "1":
+
+                        Console.Write(" Enter account number: ");
+                        accountNumber = int.Parse(Console.ReadLine());
+                        Console.WriteLine(" Account number set to: " + accountNumber);
+                        break;
+
+                    case "2":
+
+                        Console.Write(" Enter holder name: ");
+                        holderName = Console.ReadLine();
+                        Console.WriteLine(" Holder name set to: " + holderName);
+                        break;
+
+                    case "3":
+
+                        Console.Write(" Enter balance (OMR): ");
+                        balance = double.Parse(Console.ReadLine());
+                        Console.WriteLine(" Balance set to: " + balance + " OMR");
+                        break;
+
+                    case "4":
+
+                        Console.Write(" Enter status (1 for yes / 0 for no): ");
+                        isActive = Console.ReadLine() == "1";
+                        Console.WriteLine(" Status set to: " + isActive);
+                        break;
+
+                    case "5":
+
+                        Console.Write(" Enter account type (S/C/F): ");
+                        accountType = Convert.ToChar(Console.ReadLine());
+                        Console.WriteLine(" Account type set to: " + accountType);
+                        break;
+
+                    case "6":
+
+                        Console.Write(" Enter 1 if employed / 0 if not: ");
+                        isEmployed = Console.ReadLine() == "1";
+                        Console.WriteLine(" Employment status set to: " + isEmployed);
+                        break;
+
+                    case "7":
+
+                        Console.Write(" Enter monthly salary: ");
+                        salary = double.Parse(Console.ReadLine());
+                        Console.WriteLine(" Salary set to: " + salary.ToString() + " OMR");
+                        break;
+
+                    case "8":
+
+
+                        Console.Write(" Enter credit score: ");
+                        creditScore = int.Parse(Console.ReadLine());
+                        Console.WriteLine(" Credit score set to: " + creditScore);
+                        break;
+
+                    case "9":
+
+                        Console.Write(" Enter age: ");
+                        age = int.Parse(Console.ReadLine());
+                        Console.WriteLine(" Age set to: " + age);
+                        break;
+
+                    case "10":
+
+
+                        Console.Write(" Enter last deposit amount: ");
+                        deposit = double.Parse(Console.ReadLine());
+                        Console.WriteLine(" Deposit set to: " + deposit.ToString() + " OMR");
+                        break;
+
+                    case "11":
+
+
+                        Console.Write(" Enter last withdrawal amount: ");
+                        withdrawal = double.Parse(Console.ReadLine());
+                        Console.WriteLine(" Withdrawal set to: " + withdrawal.ToString() + " OMR");
+                        break;
+
+                    case "12":
+
+
+                        Console.Write(" Enter annual interest rate : ");
+                        annualRate = double.Parse(Console.ReadLine());
+                        Console.WriteLine(" Interest rate set to: " + annualRate);
+                        break;
+
+                    case "13":
+
+                        Console.Write(" Enter avg monthly balance: ");
+                        avgBalance = double.Parse(Console.ReadLine());
+                        Console.WriteLine(" Avg balance set to: " + avgBalance.ToString() + " OMR");
+                        break;
+
+                    case "0":
+
+                        Console.WriteLine(" Setup complete. Launching Main Menu...");
+                        ii = false;
+                        break;
+                        
+                    default:
+                        Console.WriteLine("Invalid option. Please choose 1-13 or 0 to finish.");
+                        break;
+                }
+            }
         }
     }
-    }
+}
+
+   
