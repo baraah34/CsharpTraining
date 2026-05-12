@@ -41,7 +41,7 @@ namespace CsharpTraining
             Console.WriteLine("13) Avg Monthly Balance :  OMR");
             Console.WriteLine("0) Setup complete — launch Main Menu");
 
-
+            //MAIN SETUP LOOP
             bool ii = true;
             while (ii)
             {
@@ -50,7 +50,7 @@ namespace CsharpTraining
 
 
                 string choice = Console.ReadLine();
-
+                
                 switch (choice)
                 {
                     case "1":
@@ -99,7 +99,7 @@ namespace CsharpTraining
 
                         Console.Write(" Enter monthly salary: ");
                         salary = double.Parse(Console.ReadLine());
-                        Console.WriteLine(" Salary set to: " + salary.ToString() + " OMR");
+                        Console.WriteLine(" Salary set to: " + salary + " OMR");
                         break;
 
                     case "8":
@@ -122,7 +122,7 @@ namespace CsharpTraining
 
                         Console.Write(" Enter last deposit amount: ");
                         deposit = double.Parse(Console.ReadLine());
-                        Console.WriteLine(" Deposit set to: " + deposit.ToString() + " OMR");
+                        Console.WriteLine(" Deposit set to: " + deposit+ " OMR");
                         break;
 
                     case "11":
@@ -130,7 +130,7 @@ namespace CsharpTraining
 
                         Console.Write(" Enter last withdrawal amount: ");
                         withdrawal = double.Parse(Console.ReadLine());
-                        Console.WriteLine(" Withdrawal set to: " + withdrawal.ToString() + " OMR");
+                        Console.WriteLine(" Withdrawal set to: " + withdrawal + " OMR");
                         break;
 
                     case "12":
@@ -145,13 +145,13 @@ namespace CsharpTraining
 
                         Console.Write(" Enter avg monthly balance: ");
                         avgBalance = double.Parse(Console.ReadLine());
-                        Console.WriteLine(" Avg balance set to: " + avgBalance.ToString() + " OMR");
+                        Console.WriteLine(" Avg balance set to: " + avgBalance + " OMR");
                         break;
 
                     case "0":
 
                         Console.WriteLine(" Setup complete. Launching Main Menu...");
-                        ii = false;
+                        ii = false;//to stop loop
                         break;
                         
                     default:
