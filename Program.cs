@@ -159,8 +159,130 @@ namespace CsharpTraining
                         break;
                 }
             }
+            // =========================================
+            // MAIN MENU
+
+
+
+            Console.WriteLine("NATIONAL BANK OF OMAN  —  Unified Banking System");
+            Console.WriteLine("AIN MENU ");
+
+            Console.WriteLine("1) ATM Services");
+            Console.WriteLine("2) Account Management");
+            Console.WriteLine("3) Loan Services");
+            Console.WriteLine("4) Currency Exchange");
+            Console.WriteLine("5) Credit Card Portal");
+            Console.WriteLine("6) Branch Services");
+            Console.WriteLine("7) Reports & Admin");
+            Console.WriteLine("0) Exit");
+
+
+
+            Console.Write("Select Module: ");
+            int choice2 = int.Parse(Console.ReadLine());
+
+            //ATM SERVICES
+            switch (choice2)
+            {
+                case 1:
+                    Console.WriteLine("=== ATM SERVICES === ");
+                    Console.WriteLine("1) Bank Info");
+                    Console.WriteLine("2) Branch Info");
+                    Console.WriteLine("3) Opening Hours");
+                    Console.WriteLine("0) Back To Main Menu");
+                    Console.Write("Select: ");
+                    int atmChoice = int.Parse(Console.ReadLine());
+                    switch (atmChoice)
+                    {
+                        // Bank Info
+                        case 1:
+                            Console.WriteLine("National Bank Of Oman");
+                            Console.WriteLine("Your Trusted Banking ");
+                            Console.WriteLine(" founding: 1995");
+                            break;
+                        case 2:// Branch Info
+                            Console.WriteLine("Muscat branch name ");
+                            Console.WriteLine(" city: Muscat");
+                            Console.WriteLine(" address: Alezdihar Street");
+                            break;
+                        case 3:// Opening Hours
+                            Console.WriteLine("Weekdays: 8 AM - 2PM");
+
+                            Console.WriteLine("Weekend: Closed");
+                            break;
+
+                        case 0:// Back To Main Menu
+                            Console.WriteLine("Returning to Main Menu...");
+                            break;
+                        default:
+                            Console.WriteLine("'Invalid selection. Please try again.");
+                            break;
+                    }
+
+                    break;
+                //Task3
+                case 2:
+                    Console.WriteLine("=== VIEW ACCOUNT DATA ===");
+                    Console.WriteLine(" Data loaded from system setup");
+                    Console.WriteLine("1) Account Number");
+                    Console.WriteLine("2) Holder Name ");
+                    Console.WriteLine("3) Balance");
+                    Console.WriteLine("4) Status ");
+                    Console.WriteLine("5) Account Type ");
+                    Console.WriteLine(" 0) Back");
+                    Console.Write("Select Field:");
+                    int AccountDataChoice = int.Parse(Console.ReadLine());
+
+                    switch (AccountDataChoice)
+                    {
+                        case 1:
+                            Console.WriteLine("Enter your Account Number");
+                           
+                            break;
+                        case 2:
+                            Console.WriteLine();
+                            break;
+                        case 3:
+                            Console.WriteLine();
+                            break;
+                        case 4:
+                            Console.WriteLine();
+                            break;
+                        case 5:
+                            Console.WriteLine();
+                            break;
+                        case 0:
+                            Console.WriteLine();
+                            break;
+
+
+
+                    }
+
+                    break;
+                case 3:
+                    Console.WriteLine("3: Loan Services  ");
+                    break;
+                case 4:
+                    Console.WriteLine("4: Currency Exchange");
+                    break;
+                case 5:
+                    Console.WriteLine("5: Credit Card Portal ");
+                    break;
+                case 6:
+                    Console.WriteLine("6: Branch Services ");
+                    break;
+                case 7:
+                    Console.WriteLine("7: Reports & Admin ");
+                    break;
+                default:
+                    Console.WriteLine("Invalid Number ");
+                    break;
+            }
+
         }
     }
 }
+        
 
    
