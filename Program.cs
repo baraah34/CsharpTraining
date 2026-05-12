@@ -159,13 +159,14 @@ namespace CsharpTraining
                         break;
                 }
             }
-            // =========================================
+            
+
             // MAIN MENU
 
 
 
             Console.WriteLine("NATIONAL BANK OF OMAN  —  Unified Banking System");
-            Console.WriteLine("AIN MENU ");
+            Console.WriteLine("MAIN MENU ");
 
             Console.WriteLine("1) ATM Services");
             Console.WriteLine("2) Account Management");
@@ -180,7 +181,7 @@ namespace CsharpTraining
 
             Console.Write("Select Module: ");
             int choice2 = int.Parse(Console.ReadLine());
-
+            
             //ATM SERVICES
             switch (choice2)
             {
@@ -191,6 +192,8 @@ namespace CsharpTraining
                     Console.WriteLine("3) Opening Hours");
                     Console.WriteLine("0) Back To Main Menu");
                     Console.Write("Select: ");
+
+
                     int atmChoice = int.Parse(Console.ReadLine());
                     switch (atmChoice)
                     {
@@ -200,7 +203,8 @@ namespace CsharpTraining
                             Console.WriteLine("Your Trusted Banking ");
                             Console.WriteLine(" founding: 1995");
                             break;
-                        case 2:// Branch Info
+                        // Branch Info
+                        case 2:
                             Console.WriteLine("Muscat branch name ");
                             Console.WriteLine(" city: Muscat");
                             Console.WriteLine(" address: Alezdihar Street");
@@ -220,8 +224,8 @@ namespace CsharpTraining
                     }
 
                     break;
-                //Task3
-                case 2:
+                //Task3
+                case 2:
                     Console.WriteLine("=== VIEW ACCOUNT DATA ===");
                     Console.WriteLine(" Data loaded from system setup");
                     Console.WriteLine("1) Account Number");
@@ -233,32 +237,38 @@ namespace CsharpTraining
                     Console.Write("Select Field:");
                     int AccountDataChoice = int.Parse(Console.ReadLine());
 
+                   
                     switch (AccountDataChoice)
                     {
                         case 1:
-                            Console.WriteLine("Enter your Account Number");
-                           
-                            break;
+                 
+                            Console.WriteLine("Account Number: " + accountNumber);
+                            break;
                         case 2:
-                            Console.WriteLine();
+                           
+                            Console.WriteLine("Holder Name: " + holderName);
                             break;
                         case 3:
-                            Console.WriteLine();
+                          
+                            Console.WriteLine("Balance: " + balance + " OMR");
                             break;
                         case 4:
-                            Console.WriteLine();
+                           
+                            string status = isActive ? "Active" : "Inactive";
+                            Console.WriteLine("Status: " + status);
                             break;
                         case 5:
-                            Console.WriteLine();
+                          
+                            Console.WriteLine("Account Type: " + accountType);
                             break;
                         case 0:
-                            Console.WriteLine();
+                            Console.WriteLine("Returning to ATM Services...");
                             break;
-
-
-
+                        default:
+                           
+                            Console.WriteLine("Field not available.");
+                            break;
                     }
-
                     break;
                 case 3:
                     Console.WriteLine("3: Loan Services  ");
