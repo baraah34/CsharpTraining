@@ -192,24 +192,30 @@ namespace CsharpTraining
                                     int atmChoice1 = int.Parse(Console.ReadLine());
                                     switch (atmChoice1)
                                     {
-
-                                        case 1:// Bank Information
+                                        // Bank Information
+                                        case 1:
                                             Console.WriteLine("National Bank Of Oman");
                                             Console.WriteLine("Your Trusted Banking Partner");
                                             Console.WriteLine(" Founding Year: 1973");
                                             break;
-                                        case 2:// Branch Information
+
+                                        // Branch Information
+                                        case 2:
                                             Console.WriteLine("Muscat branch name ");
                                             Console.WriteLine(" city: Muscat");
                                             Console.WriteLine(" address: 18 Novmber Street");
                                             break;
-                                        case 3:// Opening Hours
+
+                                        // Opening Hours
+                                        case 3:
                                             Console.WriteLine("Weekdays: 8 AM - 2 PM");
 
                                             Console.WriteLine("Weekend: Closed");
                                             break;
 
-                                        case 0:// Back To Main Menu
+
+                                        // Back To Main Menu
+                                        case 0:
                                             Console.WriteLine("Returning to Main Menu...");
                                             break;
                                         default:
@@ -219,6 +225,8 @@ namespace CsharpTraining
 
                                     break;
 
+
+
                                 // View Account Data
                                 case 2:
 
@@ -226,12 +234,11 @@ namespace CsharpTraining
 
                                     Console.WriteLine("Account Number : " + accountNumber);
                                     Console.WriteLine("Holder Name    : " + holderName);
-                                    Console.WriteLine("Balance        : " + balance.ToString("F3") + " OMR");
+                                    Console.WriteLine("Balance        : " + balance + " OMR");
                                     Console.WriteLine("Status         : " + isActive);
                                     Console.WriteLine("Account Type   : " + accountType);
 
                                     break;
-
                                 // PIN Validation
                                 case 3:
 
@@ -242,6 +249,7 @@ namespace CsharpTraining
                                         Console.WriteLine("\n=== AUTHENTICATION ===");
 
                                         const int CORRECT_PIN = 4821;
+                                        const int MAX_ATTEMPTS = 3;
 
                                         Console.WriteLine("1) Enter PIN");
                                         Console.WriteLine("2) Forgot PIN");
@@ -254,34 +262,52 @@ namespace CsharpTraining
                                         {
                                             case 1:
 
-                                                Console.Write("Enter PIN: ");
-                                                string input = Console.ReadLine();
+                                              
 
-                                                if (input.Length != 4)
-                                                {
-                                                    Console.WriteLine("Invalid PIN format.");
-                                                }
-                                                else
-                                                {
-                                                    int enteredPin = int.Parse(input);
+                                                int attempts = 0; // Start the number of attempts from 0
 
-                                                    if (enteredPin == CORRECT_PIN)
+                                                while (attempts < MAX_ATTEMPTS) //Repeat while attempts are less than 3
+                                                {
+                                                    Console.Write("Enter PIN: ");
+                                                    string input = Console.ReadLine();
+
+                                                    if (input.Length != 4)// not equal 4
                                                     {
-                                                        Console.WriteLine("Access granted. Welcome " + holderName);
+                                                        Console.WriteLine("Invalid PIN format.");
                                                     }
                                                     else
                                                     {
-                                                        Console.WriteLine("Incorrect PIN.");
+                                                        int PIN = int.Parse(input);
+
+                                                        if (PIN == CORRECT_PIN)
+                                                        {
+                                                            Console.WriteLine("Access granted. Welcome " + holderName);//IF CORRECT
+                                                            break;
+                                                        }
+                                                        else
+                                                        {
+                                                            Console.WriteLine("Incorrect PIN.");//IF 4 DIGIT BUT NOT CORRECT
+                                                        }
+                                                    }
+
+                                                    attempts++;//attempts = 0, attempts++ means attempts becomes 1
+
+
+                                                    if (attempts == MAX_ATTEMPTS)
+                                                    {
+                                                        Console.WriteLine("Maximum attempts reached. Access denied.");
                                                     }
                                                 }
 
                                                 break;
 
+                                                //forget passsword
+
                                             case 2:
 
-                                                Console.WriteLine("Please visit nearest branch with National ID.");
+                                                Console.WriteLine("Please visit nearest branch with your National ID.");
                                                 break;
-
+                                                // back
                                             case 0:
 
                                                 Console.WriteLine("Returning to ATM Services...");
@@ -321,8 +347,7 @@ namespace CsharpTraining
 
                                                 string accountText = accountNumber.ToString();
 
-                                                string maskedAccount =
-                                                    accountText.Substring(0, 4) + "****";
+                                                string maskedAccount = accountText.Substring(0, 4) + "****";
 
                                                 Console.WriteLine("\n--- SHORT RECEIPT ---");
                                                 Console.WriteLine("Account : " + maskedAccount);
