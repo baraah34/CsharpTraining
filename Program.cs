@@ -21,7 +21,7 @@ namespace CsharpTraining
             double annualRate = 0.000;
             double avgBalance = 0.000;
 
-            // Setup Menu
+            // Setup Menu for user
             Console.WriteLine("1) Account Number");
             Console.WriteLine("2) Holder Name");
             Console.WriteLine("3) Balance");
@@ -39,10 +39,10 @@ namespace CsharpTraining
             Console.WriteLine("13) Avg Monthly Balance");
             Console.WriteLine("0) Setup Complete");
 
-            // Setup Loop
-            bool ii = true;
+            
+            bool SetupMenu = true;
 
-            while (ii)
+            while (SetupMenu)
             {
                 Console.Write("\nSelect option: ");
                 string choice = Console.ReadLine();
@@ -92,7 +92,7 @@ namespace CsharpTraining
                         break;
 
                     case "8":
-                        Console.Write("Enter credit score: ");
+                        Console.Write("Enter credit : ");
                         creditScore = int.Parse(Console.ReadLine());
                         Console.WriteLine("Credit score set to: " + creditScore);
                         break;
@@ -104,7 +104,7 @@ namespace CsharpTraining
                         break;
 
                     case "10":
-                        Console.Write("Enter deposit amount: ");
+                        Console.Write("Enter deposit : ");
                         deposit = double.Parse(Console.ReadLine());
                         Console.WriteLine("Deposit set to: " + deposit + " OMR");
                         break;
@@ -128,8 +128,8 @@ namespace CsharpTraining
                         break;
 
                     case "0":
-                        Console.WriteLine("Setup complete. Launching Main Menu...");
-                        ii = false;
+                        Console.WriteLine("Setup complete. Launching Main Menu..");
+                        SetupMenu = false;
                         break;
 
                     default:
@@ -138,7 +138,7 @@ namespace CsharpTraining
                 }
             }
 
-            // MAIN MENU LOOP
+            // MAIN MENU 
             bool mainMenu = true;
 
             while (mainMenu)
@@ -195,8 +195,8 @@ namespace CsharpTraining
                                         // Bank Information
                                         case 1:
                                             Console.WriteLine("National Bank Of Oman");
-                                            Console.WriteLine("Your Trusted Banking Partner");
-                                            Console.WriteLine(" Founding Year: 1973");
+                                            Console.WriteLine("Your Trusted Banking ");
+                                            Console.WriteLine(" Founding Year: 1980");
                                             break;
 
                                         // Branch Information
@@ -268,7 +268,7 @@ namespace CsharpTraining
 
                                                 while (attempts < MAX_ATTEMPTS) //Repeat while attempts are less than 3
                                                 {
-                                                    Console.Write("Enter PIN: ");
+                                                    Console.Write("Enter 4 digit PIN: ");
                                                     string input = Console.ReadLine();
 
                                                     if (input.Length != 4)// not equal 4
@@ -290,13 +290,10 @@ namespace CsharpTraining
                                                         }
                                                     }
 
-                                                    attempts++;//attempts = 0, attempts++ means attempts becomes 1
+                                                    attempts++;//attempts = 0,  means attempts becomes 1
 
 
-                                                    if (attempts == MAX_ATTEMPTS)
-                                                    {
-                                                        Console.WriteLine("Maximum attempts reached. Access denied.");
-                                                    }
+                                                    
                                                 }
 
                                                 break;
@@ -347,7 +344,7 @@ namespace CsharpTraining
 
                                                 string accountText = accountNumber.ToString();
 
-                                                string maskedAccount = accountText.Substring(0, 4) + "****";
+                                                string maskedAccount = "****" + accountText.Substring(accountText.Length - 4);
 
                                                 Console.WriteLine("\n--- SHORT RECEIPT ---");
                                                 Console.WriteLine("Account : " + maskedAccount);
@@ -408,53 +405,53 @@ namespace CsharpTraining
 
                         break;
 
-                    // Account Management
-                    case 2:
+                //    // Account Management
+                //    case 2:
 
-                        Console.WriteLine("Account Management");
-                        break;
+                //        Console.WriteLine("Account Management");
+                //        break;
 
-                    // Loan Services
-                    case 3:
+                //    // Loan Services
+                //    case 3:
 
-                        Console.WriteLine("Loan Services");
-                        break;
+                //        Console.WriteLine("Loan Services");
+                //        break;
 
-                    // Currency Exchange
-                    case 4:
+                //    // Currency Exchange
+                //    case 4:
 
-                        Console.WriteLine("Currency Exchange");
-                        break;
+                //        Console.WriteLine("Currency Exchange");
+                //        break;
 
-                    // Credit Card Portal
-                    case 5:
+                //    // Credit Card Portal
+                //    case 5:
 
-                        Console.WriteLine("Credit Card Portal");
-                        break;
+                //        Console.WriteLine("Credit Card Portal");
+                //        break;
 
-                    // Branch Services
-                    case 6:
+                //    // Branch Services
+                //    case 6:
 
-                        Console.WriteLine("Branch Services");
-                        break;
+                //        Console.WriteLine("Branch Services");
+                //        break;
 
-                    // Reports & Admin
-                    case 7:
+                //    // Reports & Admin
+                //    case 7:
 
-                        Console.WriteLine("Reports & Admin");
-                        break;
+                //        Console.WriteLine("Reports & Admin");
+                //        break;
 
-                    // Exit
-                    case 0:
+                //    // Exit
+                //    case 0:
 
-                        Console.WriteLine("Thank you for using National Bank Of Oman.");
-                        mainMenu = false;
-                        break;
+                //        Console.WriteLine("Thank you for using National Bank Of Oman.");
+                //        mainMenu = false;
+                //        break;
 
-                    default:
+                //    default:
 
-                        Console.WriteLine("Invalid Number");
-                        break;
+                //        Console.WriteLine("Invalid Number");
+                //        break;
                 }
             }
         }
